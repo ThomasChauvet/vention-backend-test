@@ -1,13 +1,15 @@
+const { materials } = require('../tables');
+
 /**
  * @param {import('knex').Knex} knex
  */
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('materials')
+  return knex(materials)
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex('materials').insert([
+      return knex(materials).insert([
         {
           id: 1,
           name: 'Iron',
